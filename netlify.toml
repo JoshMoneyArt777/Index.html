@@ -1,0 +1,15 @@
+# Netlify Configuration File
+
+# This sets the default Content-Type for files that might be misclassified,
+# ensuring the main HTML page is always read as a web page.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Content-Type = "text/html; charset=UTF-8"
+
+# This ensures Netlify tries to load the main index.html file
+# whenever a user goes to the root (/) of your domain.
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
